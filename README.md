@@ -202,6 +202,45 @@ To delete a specific records:
 
     SELECT * FROM <table_name>
 
+#### 7. Sorting the order of data to display
+
+**Sorting:** 
+- Sorting means arranging elements in ascending or descending order. 
+
+
+`ORDER BY` command is used to select records in sorted order.
+
+***Syntax:***
+
+    SELECT <col_name> FROM <table_name> ORDER BY <col_name> ASC/DESC;
+
+
+
+***Example:***
+
+- default order is ascending
+    
+        SELECT * FROM student ORDER BY emp_name;
+
+- for ascending 
+  
+        SELECT * FROM student ORDER BY emp_name ASC;
+
+- for ascending 
+  
+        SELECT * FROM student ORDER BY emp_name DESC;
+
+
+#### 8. Update the records
+
+***Syntax:***
+
+    UPDATE <table-name> SET <column-name>=<value> WHERE <condition>
+
+***Example:***
+
+    UPDATE student SET branch='ME' WHERE rollno=1002;
+
 --- 
 
 ### Clause
