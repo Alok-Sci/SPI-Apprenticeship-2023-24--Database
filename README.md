@@ -94,6 +94,10 @@ Softwares are generally of two types:
 
 
 ## Database Operations
+
+>Click 👉[here](/practice-questions.md)👈 to see `practice questions`.
+
+>Click 👉[here](/db_queries.sql)👈 to see all `queries`.
 ### 1. Create a Database
 ***Syntax:***
 ```sql
