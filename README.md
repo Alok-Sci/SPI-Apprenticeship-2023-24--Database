@@ -224,7 +224,7 @@ INSERT INTO <table_name> VALUES (val1, val2, val_n);
 
 ### 5. Delete a table
 #### Deletion: 
-involves removing records from a tbale based on specified criteria.
+involves removing records from a table based on specified criteria.
 
 `DELETE` command is used to delete a table.
 
@@ -404,7 +404,7 @@ UPDATE student SET branch='ME' WHERE rollno=1002;
 - it defines what kind of data can be stored in a table.
 - `validates` data before it's inserted into a table.
 - prevents `incorrect` or `inconsistent` data from entering into the table.
-- constraints ensures the `accuracy` and `consistency` of data withing the database.
+- constraints ensures the `accuracy` and `consistency` of data within the database.
 
 ### 1. Primary Key:
 - Primary key is a key which is defined uniquely.
