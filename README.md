@@ -301,7 +301,7 @@ SELECT <col_name> FROM <table_name> ORDER BY <col_name> ASC;
 ```
 - for descending order:
 ```sql
-SELECT <col_name> FROM <table_name> ORDER BY <col_name> ASC;
+SELECT <col_name> FROM <table_name> ORDER BY <col_name> DESC;
 ```
 
 ***Example:***
