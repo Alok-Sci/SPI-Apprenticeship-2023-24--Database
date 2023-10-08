@@ -1,5 +1,6 @@
 # Database
 
+>List of all the [project contributors](/contributions.md)
 ## Software
 - is a set of instructions or programs.
 - is used to operate computers and to execute specific tasks.
@@ -39,13 +40,18 @@ Softwares are generally of two types:
 - Malware is a type of software
 - Malware stands for `Malicious Software`
 - This software or program is intentionally created by a person having intent of harm the files, devices, or networks.
-  #### **Types of malwares** includes `viruses`, `worms`, `ransomwares`, `spywares`, `trojan horses`, etc.
+  #### **Types of malwares** includes:
+    - `viruses`,
+    - `worms`,
+    - `ransomwares`,
+    - `spywares`,
+    - `trojan horses`, etc.
   
 ### **Firmware**
 - is a specialied software.
 - embedded in hardware devices.
-- provides low-level control for specific hardware components.
-- is stored in non-volatile memory within devices like printers, routers, etc.
+- provides `low-level` control for specific hardware components.
+- is stored in `non-volatile memory` within devices like printers, routers, etc.
 - manufacturers can customize firmware to optimize hardware performance for specific applications.
 
 ### **Upload** 

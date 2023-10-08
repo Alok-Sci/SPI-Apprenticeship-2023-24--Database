@@ -42,9 +42,18 @@ INSERT INTO student VALUES
 ```
 
 **Q4.** Write the following queries to `select` the data.
-- select all records with all columns
-- select all records with rollno, name, branch columns
-- select all records with all columns havign branch `IT`
+- select all records with all columns.
+- select all records with `rollno`, `name`, `branch` columns.
+- select all records with all columns havign `branch` `IT`.
+- Select record of student having `rollno` `1003`.
+- Select all records of students with `fee` greater than `12000`.
+- Select record with column `rollno`, `name`, `fee` having `rollno`
+`1004`.
+
+**Ans.**
+```sql
+SELECT * FROM student;
+```
 
 
 **Q5.** Write a query to `delete` the record having rollno `1004` from `student` table.
