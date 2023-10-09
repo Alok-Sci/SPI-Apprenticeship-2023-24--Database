@@ -1,6 +1,6 @@
 # Database Practice Questions
 
-## 07 october 2023
+## Task - 1 (07 october 2023)
 
 **Q1.** Write a query to create a `database` named `mydb`.
 
@@ -62,15 +62,7 @@ SELECT * FROM student;
 ```sql
 DELETE FROM student WHERE rollno = 1004;
 ```
----
-
-
-
-
-
-## 09 october 2023
-
-### Part - 1
+## Task - 2 (09 october 2023)
 
 **Q1.** In `mydb` database create a table `customer` with following structure:-.
 
@@ -139,6 +131,85 @@ CREATE TABLE orders
     FOREIGN KEY (cust_id) REFERENCES customer(cust_id)
 );
 ```
----
-### Part - 2
+## Task - 3 (09 october 2023)
 
+**Q1.1** Create a table person with following structure:-
+| Column Name | Data Type | Constraint |
+| --- | --- | --- |
+| id | INT | PRIMARY KEY |
+| name | VARCHAR(50) | |
+| address | VARCHAR(100) |  |
+
+**Q1.2** Create a table account with following strucutre:-
+| Column Name | Data Type | Constraint |
+| --- | --- | --- |
+| acid | INT | Primary key |
+| bs | INT | |
+| hra | INT | |
+| da | INT | |
+| id | INT | FOREIGN KEY references to person(id) |
+
+**Ans.**
+```sql
+CREATE TABLE person
+(
+    id int PRIMARY KEY,
+    name VARCHAR(50),
+    address VARCHAR(100)
+);
+
+CREATE TABLE account
+(
+    acid int AUTO_INCREMENT PRIMARY KEY,
+    bs int,
+    hra int,
+    da int,
+    id int,
+    FOREIGN KEY (id) REFERENCES person(id) 
+);
+```
+
+**Q2.1** Insert following records in person table:-
+| Id | Name | Address |
+| --- | --- | --- |
+| 1001 | Dhirendra Singh | Lucknow |
+| 1002 | Jitendra Verma | Sitapur |
+| 1003 | Brijesh Mishra | Barabanki |
+| 1004 | Rohit Singh | Bihar |
+| 1005 | Priya Singh | Kanpur |
+
+**Q2.2** Insert following records in account table:-
+| Acid | Bs  |Hra | Da | Id |
+| --- | --- | --- | --- | --- |
+| 1 | 20000 | 5000 | 10000 | 1001 |
+| 2 | 30000 | 7500 | 15000 | 1002| 
+| 3 | 40000 | 10000 | 20000 | 1003| 
+| 4 | 50000 | 12500 | 25000 | 1004| 
+| 5 | 40000 | 10000 | 20000| 
+
+
+**Ans.**
+```sql
+INSERT INTO person VALUES
+(1001, 'Dhirendra Singh', 'Lucknow'),
+(1002, 'Jitendra Verma', 'Sitapur'),
+(1003, 'Brijesh Mishra', 'Barabanki'),
+(1004, 'Rohit Singh', 'Bihar'),
+(1005, 'Priya Singh', 'Kanpur');
+
+INSERT INTO account (bs, hra, da, id) VALUES
+(20000, 5000, 10000, 1001),
+(30000, 7500, 15000, 1002),
+(40000, 10000, 20000, 1003),
+(50000, 12500, 25000, 1004);
+
+INSERT INTO account (bs, hra, da) VALUES 
+(40000, 10000, 20000);
+
+```
+
+**Q3.**  \
+**i.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `inner join` operation. \
+**ii.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `left join` operation. \
+**iii.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `right join` operation. \
+**iv.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `full join` operation.
