@@ -68,7 +68,7 @@ ALTER
 
 
 
--- practice question (09 oct 2023)
+-- practice question (09 oct 2023) task-2
 
 --create a table with columns (cust_id, name, address)
 CREATE TABLE customer 
@@ -104,4 +104,46 @@ CREATE TABLE orders
     FOREIGN KEY (cust_id) REFERENCES customer(cust_id)
 );
 
+-- delete customer named table
 DROP TABLE customer;
+
+
+-- practice question (09 oct 2023) task-3
+-- create a table named person
+CREATE TABLE person
+(
+    id int PRIMARY KEY,
+    name VARCHAR(50),
+    address VARCHAR(100)
+);
+
+-- create a table named account
+CREATE TABLE account
+(
+    acid int AUTO_INCREMENT PRIMARY KEY,
+    bs int,
+    hra int,
+    da int,
+    id int,
+    FOREIGN KEY (id) REFERENCES person(id) 
+);
+
+-- insert records into the person table
+INSERT INTO person VALUES
+(1001, 'Dhirendra Singh', 'Lucknow'),
+(1002, 'Jitendra Verma', 'Sitapur'),
+(1003, 'Brijesh Mishra', 'Barabanki'),
+(1004, 'Rohit Singh', 'Bihar'),
+(1005, 'Priya Singh', 'Kanpur');
+
+-- insert records into the account table
+INSERT INTO account (bs, hra, da, id) VALUES
+(20000, 5000, 10000, 1001),
+(30000, 7500, 15000, 1002),
+(40000, 10000, 20000, 1003),
+(50000, 12500, 25000, 1004);
+INSERT INTO account (bs, hra, da) VALUES (40000, 10000, 20000);
+
+--display records from person and account
+SELECT * FROM account;
+SELECT * FROM person;
