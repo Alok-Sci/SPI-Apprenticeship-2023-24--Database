@@ -66,3 +66,74 @@ DELETE FROM student WHERE rollno = 1004;
 
 
 
+
+
+## 09 october 2023
+
+**Q1.** In `mydb` database create a table `customer` with following structure:-.
+
+| Column name | Data Type | Constraint |
+| --- | --- | --- |
+| cust_id | int | |
+| name | varchar(50) | | 
+| address | varchar(500) |  |
+
+**Ans.**
+```sql
+CREATE TABLE customer 
+(
+    cust_id int,
+    name varchar(50),
+    address varchar(500)
+);
+```
+
+**Q2.** Do following operations and `customer` table:-
+
+- Add a new column with name `connect_date` with datatype
+`date`.
+- Drop column `connect_date`.
+
+- Add primary key on `cust_id` column.
+
+- Add a new column `connect_date` with datatype `date` after
+`name` column.
+
+**Ans.**
+- Add a new column with name `connect_date` with datatype
+`date`.
+    ```sql
+    ALTER TABLE customer ADD connect_date date;
+    ```
+- Drop column `connect_date`.
+    ```sql
+    ALTER TABLE customer DROP COLUMN connect_date;
+    ```
+- Add primary key on `cust_id` column.
+    ```sql
+    ALTER TABLE customer MODIFY cust_id int PRIMARY KEY;
+    ```
+
+- Add a new column `connect_date` with datatype `date` after
+`name` column.
+    ```sql
+    ALTER TABLE customer ADD connect_date date AFTER name; 
+    ```
+
+**Q3.** Create a table with name `orders` with following structure:-
+| Column name | Data type | Constraint |
+|--- | --- | --- |
+| pid | int | PRIMARY KEY |
+| pname | varchar(50) |  |
+| cust_id | int | FOREIGN KEY references to `cust_id` of `customer` table
+
+**Ans.** 
+```sql
+CREATE TABLE orders 
+(
+    pid int PRIMARY KEY,
+    pname varchar(50),
+    cust_id int,
+    FOREIGN KEY (cust_id) REFERENCES customer(cust_id)
+);
+```
