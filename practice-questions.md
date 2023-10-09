@@ -70,6 +70,8 @@ DELETE FROM student WHERE rollno = 1004;
 
 ## 09 october 2023
 
+### Part - 1
+
 **Q1.** In `mydb` database create a table `customer` with following structure:-.
 
 | Column name | Data Type | Constraint |
@@ -137,3 +139,6 @@ CREATE TABLE orders
     FOREIGN KEY (cust_id) REFERENCES customer(cust_id)
 );
 ```
+---
+### Part - 2
+
