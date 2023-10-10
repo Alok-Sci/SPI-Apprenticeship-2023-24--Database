@@ -215,7 +215,7 @@ INSERT INTO account (bs, hra, da) VALUES
 **iv.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `full join` operation.
 
 **Ans.**
-**i.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `inner join` operation. \
+**i.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `inner join` operation.
 ```sql
 SELECT person.name, account.bs, account.hra, account.da FROM person INNER JOIN account ON person.id=account.id;
 ```
@@ -227,7 +227,7 @@ SELECT person.name, account.bs, account.hra, account.da FROM person INNER JOIN a
 | Brijesh Mishra | 40000 | 10000 | 20000 |
 | Rohit Singh | 50000 | 12500 | 25000 |
 
-**ii.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `left join` operation. \
+**ii.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `left join` operation.
 ```sql
 SELECT person.name, account.bs, account.hra, account.da FROM person LEFT JOIN account ON person.id=account.id;
 ```
@@ -239,7 +239,7 @@ SELECT person.name, account.bs, account.hra, account.da FROM person LEFT JOIN ac
 | Rohit Singh | 50000 | 12500 | 25000 |
 | Priya Singh | _NULL_ | _NULL_ | _NULL_ |
 
-**iii.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `right join` operation. \
+**iii.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `right join` operation.
 ```sql
 SELECT person.name, account.bs, account.hra, account.da FROM person RIGHT JOIN account ON person.id=account.id;
 ```
