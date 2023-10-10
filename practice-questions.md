@@ -213,3 +213,44 @@ INSERT INTO account (bs, hra, da) VALUES
 **ii.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `left join` operation. \
 **iii.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `right join` operation. \
 **iv.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `full join` operation.
+
+**Ans.**
+**i.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `inner join` operation. \
+```sql
+SELECT person.name, account.bs, account.hra, account.da FROM person INNER JOIN account ON person.id=account.id;
+```
+
+| name | bs | hra | da |
+| --- | --- | --- | --- |
+| Dhirendra Singh | 20000 | 5000 | 10000 |
+| Jitendra Verma | 30000 | 7500 | 15000 |
+| Brijesh Mishra | 40000 | 10000 | 20000 |
+| Rohit Singh | 50000 | 12500 | 25000 |
+
+**ii.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `left join` operation. \
+```sql
+SELECT person.name, account.bs, account.hra, account.da FROM person LEFT JOIN account ON person.id=account.id;
+```
+| name | bs | hra | da |
+| --- | --- | --- | --- |
+| Dhirendra Singh | 20000 | 5000 | 10000 |
+| Jitendra Verma | 30000 | 7500 | 15000 |
+| Brijesh Mishra | 40000 | 10000 | 20000 |
+| Rohit Singh | 50000 | 12500 | 25000 |
+| Priya Singh | _NULL_ | _NULL_ | _NULL_ |
+
+**iii.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `right join` operation. \
+```sql
+SELECT person.name, account.bs, account.hra, account.da FROM person RIGHT JOIN account ON person.id=account.id;
+```
+| name | bs | hra | da |
+| --- | --- | --- | --- |
+| Dhirendra Singh | 20000 | 5000 | 10000 |
+| Jitendra Verma | 30000 | 7500 | 15000 |
+| Brijesh Mishra | 40000 | 10000 | 20000 |
+| Rohit Singh | 50000 | 12500 | 25000 |
+| _NULL_ | 40000 | 10000 | 20000 |
+
+**iv.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `full join` operation.
+
+
