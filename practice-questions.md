@@ -2,14 +2,14 @@
 
 ## Task - 1 (07 october 2023)
 
-**Q1.** Write a query to create a `database` named `mydb`.
+#### **Q1.** Write a query to create a `database` named `mydb`.
 
 **Ans.** 
 ```sql
 CREATE DATABASE mydb;
 ```
 
-**Q2.** Write a query to create a `table` named `student` with following columns:
+#### **Q2.** Write a query to create a `table` named `student` with following columns:
 - `rollno` with `int` data type, is `primary key`.
 - `name` with `varchar` data type having size `40`.
 - `branch` with `varchar` data type having size `100`.
@@ -26,7 +26,7 @@ CREATE TABLE student
 );
 ```
 
-**Q3.** Write a query to insert the following `data` into the `student` table.
+#### **Q3.** Write a query to insert the following `data` into the `student` table.
 - 1001, Rohit, CS, 12000
 - 1002, Mohit, CS, 12000
 - 1003, Shobhit, IT, 15000
@@ -41,22 +41,41 @@ INSERT INTO student VALUES
 (1004, 'Aayushi', 'CS', 15000);
 ```
 
-**Q4.** Write the following queries to `select` the data.
-- select all records with all columns.
-- select all records with `rollno`, `name`, `branch` columns.
-- select all records with all columns havign `branch` `IT`.
-- Select record of student having `rollno` `1003`.
-- Select all records of students with `fee` greater than `12000`.
-- Select record with column `rollno`, `name`, `fee` having `rollno`
-`1004`.
+#### **Q4.** Write the following queries to `select` the data.
+##### - Select all records of `student` table with all columns.
+##### - Select all records of `student` table with `rollno`, `name`, `branch` columns.
+##### - Select all records of `student` table with all columns havign `branch` `IT`.
+##### - Select record of `student` table having `rollno` `1003`.
+##### - Select all records of `student` table with `fee` greater than `12000`.
+##### - Select record of `student` table with column `rollno`, `name`, `fee` having `rollno` `1004`.
 
 **Ans.**
+- Select all records with all columns.
 ```sql
 SELECT * FROM student;
 ```
+- Select all records with `rollno`, `name`, `branch` columns.
+```sql
+SELECT rollno, name, branch FROM student;
+``` 
+- Select all records of `student` table with all columns havign `branch` `IT`.
+```sql
+SELECT * FROM student WHERE branch='IT';
+``` 
+- Select record of `student` table having `rollno` `1003`.
+```sql
+SELECT * FROM student WHERE rollno=1003;
+``` 
+- Select all records of `student` table with `fee` greater than `12000`.
+```sql
+SELECT * FROM student WHERE fee>12000;
+``` 
+- Select record of `student` table with column `rollno`, `name`, `fee` having `rollno` `1004`.
+```sql
+SELECT rollno, name, fee FROM student WHERE rollno=1004;
+``` 
 
-
-**Q5.** Write a query to `delete` the record having rollno `1004` from `student` table.
+#### **Q5.** Write a query to `delete` the record having rollno `1004` from `student` table.
 
 **Ans.**
 ```sql
@@ -64,7 +83,7 @@ DELETE FROM student WHERE rollno = 1004;
 ```
 ## Task - 2 (09 october 2023)
 
-**Q1.** In `mydb` database create a table `customer` with following structure:-.
+#### **Q1.** In `mydb` database create a table `customer` with following structure:-.
 
 | Column name | Data Type | Constraint |
 | --- | --- | --- |
@@ -82,7 +101,7 @@ CREATE TABLE customer
 );
 ```
 
-**Q2.** Do following operations and `customer` table:-
+#### **Q2.** Do following operations and `customer` table:-
 
 - Add a new column with name `connect_date` with datatype
 `date`.
@@ -114,7 +133,7 @@ CREATE TABLE customer
     ALTER TABLE customer ADD connect_date date AFTER name; 
     ```
 
-**Q3.** Create a table with name `orders` with following structure:-
+#### **Q3.** Create a table with name `orders` with following structure:-
 | Column name | Data type | Constraint |
 |--- | --- | --- |
 | pid | int | PRIMARY KEY |
@@ -133,14 +152,14 @@ CREATE TABLE orders
 ```
 ## Task - 3 (09 october 2023)
 
-**Q1.1** Create a table person with following structure:-
+#### **Q1.1** Create a table person with following structure:-
 | Column Name | Data Type | Constraint |
 | --- | --- | --- |
 | id | INT | PRIMARY KEY |
 | name | VARCHAR(50) | |
 | address | VARCHAR(100) |  |
 
-**Q1.2** Create a table account with following strucutre:-
+#### **Q1.2** Create a table account with following strucutre:-
 | Column Name | Data Type | Constraint |
 | --- | --- | --- |
 | acid | INT | Primary key |
@@ -169,7 +188,7 @@ CREATE TABLE account
 );
 ```
 
-**Q2.1** Insert following records in person table:-
+#### **Q2.1** Insert following records in person table:-
 | Id | Name | Address |
 | --- | --- | --- |
 | 1001 | Dhirendra Singh | Lucknow |
@@ -178,7 +197,7 @@ CREATE TABLE account
 | 1004 | Rohit Singh | Bihar |
 | 1005 | Priya Singh | Kanpur |
 
-**Q2.2** Insert following records in account table:-
+#### **Q2.2** Insert following records in account table:-
 | Acid | Bs  |Hra | Da | Id |
 | --- | --- | --- | --- | --- |
 | 1 | 20000 | 5000 | 10000 | 1001 |
@@ -208,18 +227,17 @@ INSERT INTO account (bs, hra, da) VALUES
 
 ```
 
-**Q3.**  \
-**i.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `inner join` operation. \
-**ii.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `left join` operation. \
-**iii.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `right join` operation. \
-**iv.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `full join` operation.
+#### **Q3.**
+##### **i.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `inner join` operation.
+##### **ii.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `left join` operation.
+##### **iii.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `right join` operation.
+##### **iv.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `full join` operation.
 
 **Ans.**
 **i.** select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `inner join` operation.
 ```sql
 SELECT person.name, account.bs, account.hra, account.da FROM person INNER JOIN account ON person.id=account.id;
 ```
-
 | name | bs | hra | da |
 | --- | --- | --- | --- |
 | Dhirendra Singh | 20000 | 5000 | 10000 |
@@ -257,7 +275,7 @@ SELECT person.name, account.bs, account.hra, account.da FROM person LEFT JOIN ac
 UNION
 SELECT person.name, account.bs, account.hra, account.da FROM person RIGHT JOIN account ON person.id=account.id;
 ```
- | name | bs | hra | da |
+| name | bs | hra | da |
 | --- | --- | --- | --- |
 | Dhirendra Singh | 20000 | 5000 | 10000 |
 | Jitendra Verma | 30000 | 7500 | 15000 |
@@ -265,3 +283,148 @@ SELECT person.name, account.bs, account.hra, account.da FROM person RIGHT JOIN a
 | Rohit Singh | 50000 | 12500 | 25000 |
 | Priya Singh | _NULL_ | _NULL_ | _NULL_ |
 | _NULL_ | 40000 | 10000 | 20000 |
+
+## Task - 4 (10 october 2023)
+
+#### **Q1.** 
+- Create a database with name ‘practicedb’. 
+- In practicedb database create a table with name ‘userinfo’ with following structure:-
+
+| Column Name | Data Type | Constraint |
+| --- | --- | --- |
+| Firstname | VARCHAR(30) | |
+| Lastname | VARCHAR(30)| |
+| Contactno | VARCHAR(15) |Primary Key |
+| Emailaddress | VARCHAR(50)| |
+- Now add a new column gender with data type type varchar(6) after Lastname.
+
+**Ans.**
+- Create a database with name ‘practicedb’. 
+```sql
+CREATE DATABASE practicedb;
+```
+- In practicedb database create a table with name ‘userinfo’ with following structure:-
+```sql
+USE practicedb;
+CREATE TABLE userinfo
+{
+    Firstname VARCHAR(30),
+    Lastname VARCHAR(30),
+    Contactno VARCHAR(15) PRIMARY KEY,
+    Emailaddress VARCHAR(50)
+};
+```
+- Now add a new column gender with data type type varchar(6) after Lastname.
+```sql
+ALTER TABLE userinfo ADD gender varchar(6) AFTER Lastname;
+```
+
+#### **Q2.** Insert following records in userinfo table:-
+| Firstname | Lastname | Gender | Contactno | Emailaddress |
+| --- | --- | --- | --- | --- |
+| Brijesh | Mishra | Male | 9453318798 | brijesh@gmail.com |
+| Rajat | Verma | Male | 9936652039 | rajat@gmail.com |
+| Nisha | Singh | Female | 9559763249 | nisha@gmail.com |
+| Priya | Singh | Female | 7753001621 | priya@gmail.com |
+
+**Ans.**
+```sql
+INSERT INTO userinfo VALUES
+('Brijesh', 'Mishra', 'Male', 9453318798, 'brijesh@gmail.com'),
+('Rajat', 'Verma', 'Male', 9936652039, 'rajat@gmail.com'),
+('Nisha', 'Singh', 'Female', 9559763249, 'nisha@gmail.com'),
+('Priya', 'Singh', 'Female', 7753001621, 'priya@gmail.com');
+```
+
+#### **Q3.** Now perform following operations on userinfo table:-
+##### **i.** Select all records from `userinfo` table.
+##### **ii.** Select `Firstname`, `Lastname`, `Emailaddress` columns from `userinfo` table.
+##### **iii.** Select record with `contactno` `9453318798`.
+##### **iv.** Select all records with `gender` `Male`.
+##### **v.** Count records with `gender` `Female`.
+##### **vi.** Update `emailaddress` with value `brijesh.225409@gmail.com` for `contactno` `9453318798`.
+##### **vii.** Delete record with `contactno` `7753001621`.
+##### **viii.** Truncate table `userinfo`.
+##### **ix.** Drop table `userinfo`.
+
+**Ans.** 
+**i.** Select all records from `userinfo` table.
+```sql
+SELECT * FROM userinfo;
+```
+**ii.** Select `Firstname`, `Lastname`, `Emailaddress` columns from `userinfo` table.
+```sql
+SELECT Firstname, Lastname, Emailaddress FROM userinfo;
+```
+**iii.** Select record with `contactno` `9453318798`.
+```sql
+SELECT * FROM userinfo WHERE contactno=9453318798;
+```
+**iv.** Select all records with `gender` `Male`.
+```sql
+SELECT * FROM userinfo WHERE gender='Male';
+```
+**v.** Count records with `gender` `Female`.
+```sql
+SELECT COUNT(*) FROM userinfo WHERE gender='Female';
+```
+**vi.** Update `emailaddress` with value `brijesh.225409@gmail.com` for `contactno` `9453318798`.
+```sql
+UPDATE userinfo SET emailaddress='brijesh.225409@gmail.com' WHERE contactno=9453318798;
+```
+**vii.** Delete record with `contactno` `7753001621`.
+```sql
+DELETE FROM userinfo WHERE contactno=7753001621;
+```
+**viii.** Truncate table `userinfo`.
+```sql
+TRUNCATE TABLE userinfo;
+```
+**ix.** Drop table `userinfo`.
+```sql
+DROP TABLE userinfo;
+```
+
+#### **Q4.** Create tables with following structures:-
+##### Table name:- country
+| Column Name | Data Type | Constraint |
+| --- | --- | --- |
+| countryid | int | PRIMARY KEY, AUTO_INCREMENT |
+| countryname | VARCHAR(100) | |
+
+##### Table name:- state
+| Column Name | Data Type | Constraint |
+| --- | --- | --- |
+| stateid | int | PRIMARY KEY, AUTO_INCREMENT |
+| statename | VARCHAR(100) | |
+| countryname | int | FOREIGN KEY REFERENCES to country(countryid) |
+
+##### Table name:- city
+| Column Name | Data Type | Constraint |
+| --- | --- | --- |
+| cityid | int | PRIMARY KEY, AUTO_INCREMENT |
+| cityname | VARCHAR(100) | |
+| stateid | int | FOREIGN KEY REFERENCES to state(stateid) |
+
+**Ans.**
+```sql
+CREATE TABLE country
+(
+    countryid int AUTO_INCREMENT PRIMARY KEY,
+    countryname VARCHAR(100)
+);
+CREATE TABLE state
+(
+    stateid int AUTO_INCREMENT PRIMARY KEY,
+    statename VARCHAR(100),
+    countryid int,
+    FOREIGn KEY (countryid) REFERENCES country(countryid)
+);
+CREATE TABLE city
+(
+    cityid int AUTO_INCREMENT PRIMARY KEY,
+    cityname VARCHAR(100),
+    stateid int,
+    FOREIGN KEY (stateid) REFERENCES state(stateid)
+);
+```
