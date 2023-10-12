@@ -175,3 +175,91 @@ SELECT person.name, account.bs, account.hra, account.da FROM person RIGHT JOIN a
 SELECT person.name, account.bs, account.hra, account.da FROM person LEFT JOIN account ON person.id=account.id
 UNION
 SELECT person.name, account.bs, account.hra, account.da FROM person RIGHT JOIN account ON person.id=account.id;
+--------------------------
+-- 12 oct 2023------
+-- tast - 5
+-- create database
+CREATE DATABASE testdb;
+
+-- create table
+USE testdb;
+CREATE TABLE bookstore
+(
+    bookid VARCHAR(15) PRIMARY KEY,
+    isbnno VARCHAR(15),
+    program VARCHAR(15),
+    branch VARCHAR(100),
+    subject VARCHAR(100),
+    bookname VARCHAR(100),
+    authorname VARCHAR(100)
+);
+
+-- insert query
+
+INSERT INTO testdb VALUES
+('TMBU1', '12345678', 'B.Tech.', 'CS', 'C', 'Let Us C', 'Y.P.Kanetkar'),
+('TMBU2', '12345678', 'B.Tech.', 'CS', 'C', 'Let Us C', 'Y.P.Kanetkar'),
+('TMBU3', '12345678', 'B.Tech.', 'CS', 'C', 'Let Us C', 'Y.P.Kanetkar'),
+('TMBU4', '12345679', 'B.Tech.', 'CS', 'Java', 'Effective Java', 'Joshua Bloch'),
+('TMBU5', '12345679', 'B.Tech.', 'CS', 'Java', 'Effective Java', 'Joshua Bloch'),
+('TMBU6', '12345679', 'B.Tech.', 'CS', 'Java', 'Effective Java', 'Joshua Bloch'),
+('TMBU7', '12345688', 'B.Tech.', 'IT', 'Database', 'RDBMS Using MySQL', 'Brijesh Mishra');
+
+-- select bookid, isbnno, program, bookname, authorname from bookstore table with all rows.
+SELECT (bookid, isbnno, program, bookname, authorname) FROM bookstore;
+
+-- select all books of "CS" branch
+SELECT bookname FROM bookstore WHERE branch='CS';
+
+-- count no. of books with name "Let Us C"
+SELECT COUNT(*) FROM bookstore WHERE bookname='Let Us C';
+
+-- Update authorname with "Vipin C. Desai" for bookid TMBU7
+UPDATE bookstore SET authorname='Vipin C. Desai' WHERE bookid='TMBU7';
+
+-- delete record of book with bookid TMBU7.
+DELETE FROM bookstore WHERE bookid='TMBU7';
+
+-- create a table with name "issuebook" with rows (issueid int pm, bookid varchar(15) fk to bookstroe
+USE testdb;
+CREATE TABLE issuebook 
+(
+    issueid int PRIMARY KEY,
+    bookid VARCHAR(15),
+    Rollno int,
+    studentname VARCHAR(50),
+    Bookname VARCHAR(100),
+    authorname VARCHAR(100),
+    FOREIGN KEY (bookid) REFERENCES bookstore(bookid)
+);
+
+-- insert records
+INSERT INTO issuebook VALUES 
+(1, 'TMBU1', 1001, 'Rajat Singh', 'Let Us C', 'Y.P.Kanetkar'),
+(2, 'TMBU4', 1001, 'Rajat Singh', 'Effective Java', 'Joshua Bloch'),
+(3, 'TMBU2', 1002, 'Dinesh Singh', 'Let Us C', 'Y.P.Kanetkar'),
+(4, 'TMBU5', 1003, 'Nisha Kumari', 'Effective Java', 'Joshua Bloch');
+
+-- select bookid, isbno, rollno, studentname, bookname, authorname from bookstore and issuebook tables using inner join operation.
+SELECT (bookid, isbno, rollno, studentname, bookname, authorname) FROM bookstore INNER JOIN issuebook ON bookstore.bookid=issuebook.bookid;
+
+-- select bookid, isbno, rollno, studentname, bookname, authorname from bookstore and issuebook tables using full outer join operation.
+SELECT (bookid, isbno, rollno, studentname, bookname, authorname) FROM bookstore LEFT JOIN issuebook
+UNION
+SELECT (bookid, isbno, rollno, studentname, bookname, authorname) FROM bookstore RIGHT JOIN issuebook;
+
+-- create a table staff with rows (staffid varchar(10) pm, staffname varchar(50), department varchar(100), salary int);
+CREATE TABLE staff 
+(
+    staffid VARCHAR(10) PRIMARY KEY,
+    staffname VARCHAR(50),
+    department VARCHAR(100),
+    salary int 
+);
+-- now create a view with name 'st' having fields staffid, staffname, department.
+CREATE VIEW st 
+AS
+SELECT (staffid, staffname, department) FROM staff;
+
+-- now insert some records in 'st' view.
+INSERT INTO st VALUES 
