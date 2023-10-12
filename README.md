@@ -332,7 +332,7 @@ DROP TABLE empinfo;
 
 ### 6. Delete one or more records from a table
 #### Deletion: 
-Deletion involves removing records from a tbale based on specified criteria.
+Deletion involves removing records from a table based on specified criteria.
 
 `DELETE` command is used to delete records in a table.
 
