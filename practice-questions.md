@@ -431,11 +431,26 @@ CREATE TABLE city
 
 ## Task - 5 (12 october 2023)
 
-#### **Q.1** create database
+#### **Q1** 
+##### **i.** Create a new database in MySql with name `testdb`.
+##### **ii.** In `testdb` database create a table 'bookstore` with following structure:-
+
+**Ans.**
+**i.** Create a new database in MySql with name `testdb`.
 ```sql
 CREATE DATABASE testdb;
 ```
-#### create table
+**ii.** In `testdb` database create a table 'bookstore` with following structure:-
+| Column Name | Data Type | Constraint |
+| --- | --- | --- |
+| bookid | varchar(15) | PRIMARY KEY |
+| isbnno | varchar(15) | |
+| program | varchar(100) |  |
+| branch | varchar(100) | | 
+| subject | varchar(100) | |
+| bookname | varchar(100) | | 
+| authorname | varchar(100) | |
+
 ```sql
 USE testdb;
 CREATE TABLE bookstore
@@ -450,7 +465,17 @@ CREATE TABLE bookstore
 );
 ```
 
-#### insert query
+#### **Q2.** Insert the following records in bookstore table:-
+| Bookid | isbnno | program | branch | subject | bookname | authorname |
+| --- | --- | --- | --- | --- | --- | --- |
+| TMBU1 | 12345678 | B.Tech. | CS | C | Let Us C | Y.P.Kanetkar |
+| TMBU2 | 12345678 | B.Tech. | CS | C | Let Us C | Y.P.Kanetkar |
+| TMBU3 | 12345678 | B.Tech. | CS | C | Let Us C | Y.P.Kanetkar |
+| TMBU4 | 12345679 | B.Tech. | CS | Java | Effective Java | Joshua Bloch |
+| TMBU5 | 12345679 | B.Tech. | CS | Java | Effective Java | Joshua Bloch |
+| TMBU6 | 12345679 | B.Tech. | CS | Java | Effective Java | Joshua Bloch |
+| TMBU7 | 12345688 | B.Tech. | IT | Database | RDBMS Using MySQL | Brijesh Mishra |
+
 ```sql
 INSERT INTO bookstore VALUES
 ('TMBU1', '12345678', 'B.Tech.', 'CS', 'C', 'Let Us C', 'Y.P.Kanetkar'),
@@ -461,27 +486,46 @@ INSERT INTO bookstore VALUES
 ('TMBU6', '12345679', 'B.Tech.', 'CS', 'Java', 'Effective Java', 'Joshua Bloch'),
 ('TMBU7', '12345688', 'B.Tech.', 'IT', 'Database', 'RDBMS Using MySQL', 'Brijesh Mishra');
 ```
-#### select bookid, isbnno, program, bookname, authorname from bookstore table with all rows.
+#### **Q3.** Perform the followiong operations on bookstore table:-
+##### **i.** Select bookid, isbnno, program, bookname, authorname from bookstore table with all rows.
+##### **ii.** Select all books of "CS" branch
+##### **iii.** Count no. of books with name "Let Us C"
+##### **iv.** Update authorname with "Vipin C. Desai" for bookid "TMBU7"
+##### **v.** Delete record of book with bookid TMBU7.
+
+**Ans.**
+
+**i.** Select bookid, isbnno, program, bookname, authorname from bookstore table with all rows.
 ```sql
 SELECT bookid, isbnno, program, bookname, authorname FROM bookstore;
 ```
-#### select all books of "CS" branch
+**ii.** Select all books of "CS" branch
 ```sql
 SELECT * FROM bookstore WHERE branch='CS';
 ```
-#### count no. of books with name "Let Us C"
+**iii.** Count no. of books with name "Let Us C"
 ```sql
 SELECT COUNT(*) FROM bookstore WHERE bookname='Let Us C';
 ```
-#### Update authorname with "Vipin C. Desai" for bookid TMBU7
+**iv.** Update authorname with "Vipin C. Desai" for bookid "TMBU7"
 ```sql
 UPDATE bookstore SET authorname='Vipin C. Desai' WHERE bookid='TMBU7';
 ```
-#### delete record of book with bookid TMBU7.
+**v.** Delete record of book with bookid TMBU7.
 ```sql
 DELETE FROM bookstore WHERE bookid='TMBU7';
 ```
-#### create a table with name "issuebook" with rows (issueid int pm, bookid varchar(15) fk to bookstroe
+#### **Q4.** Create a table with name "issuebook" with rows structure:-
+| Column Name | Data Type | constraint |
+| --- | --- | --- |
+| issueid | int | PRIMARY KEY |
+| bookid | varchar(15) | FOREIGN KEY references to bookstore. |
+| Rollno | int | | 
+| studentname | varchar(50) | |
+| Bookname | varchar(100) | | 
+| authorname | varchar(100) | |
+
+**Ans.**
 ```sql
 USE testdb;
 CREATE TABLE issuebook 
@@ -495,7 +539,15 @@ CREATE TABLE issuebook
     FOREIGN KEY (bookid) REFERENCES bookstore(bookid)
 );
 ```
-#### insert records
+#### **Q5.** Insert the following records in `issuebook` table:-
+| issueid | Bookid | rollno | studentname | bookname | authorname |
+| --- | --- | --- | --- | --- | --- |
+| 1 | TMBU1 | 1001 | Rajat Singh | Let Us C | Y.P.Kanetkar |
+| 2 | TMBU4 | 1001 | Rajat Singh | Effective Java | Joshua Bloch |
+| 3 | TMBU2 | 1002 | Dinesh Singh | Let Us C | Y.P.Kanetkar |
+| 4 | TMBU5 | 1003 | Nisha Kumari | Effective Java | Joshua Bloch |
+
+**Ans.**
 ```sql
 INSERT INTO issuebook VALUES 
 (1, 'TMBU1', 1001, 'Rajat Singh', 'Let Us C', 'Y.P.Kanetkar'),
@@ -503,11 +555,18 @@ INSERT INTO issuebook VALUES
 (3, 'TMBU2', 1002, 'Dinesh Singh', 'Let Us C', 'Y.P.Kanetkar'),
 (4, 'TMBU5', 1003, 'Nisha Kumari', 'Effective Java', 'Joshua Bloch');
 ```
-#### select bookid, isbno, rollno, studentname, bookname, authorname from bookstore and issuebook tables using inner join operation.
+#### **Q6.**
+##### **i.** select bookid, isbno, rollno, studentname, bookname, authorname from bookstore and issuebook tables using inner join operation.
+##### **ii.** select bookid, isbno, rollno, studentname, bookname, authorname from bookstore and issuebook tables using full outer join operation.
+
+**Ans.**
+
+**i.** select bookid, isbno, rollno, studentname, bookname, authorname from bookstore and issuebook tables using inner join operation.
 ```sql
 SELECT bookstore.bookid, isbnno, rollno, studentname, bookstore.bookname, bookstore.authorname FROM bookstore INNER JOIN issuebook ON bookstore.bookid=issuebook.bookid;
 ```
-#### select bookid, isbno, rollno, studentname, bookname, authorname from bookstore and issuebook tables using full outer join operation.
+**ii.** select bookid, isbno, rollno, studentname, bookname, authorname from bookstore and issuebook tables using full outer join operation.
+**Ans.**
 ```sql
 SELECT bookstore.bookid, isbnno, rollno, studentname, bookstore.bookname, bookstore.authorname
 FROM bookstore
@@ -519,7 +578,21 @@ FROM bookstore
 RIGHT JOIN issuebook
 ON bookstore.bookid=issuebook.bookid;
 ```
-#### create a table staff with rows (staffid varchar(10) pm, staffname varchar(50), department varchar(100), salary int);
+#### **Q7.** 
+##### **i.** Create a table staff with following structure:-
+| Column Name | Data Type | Constraint | 
+| --- | --- | --- | 
+| staffid | varchar(10) | PRIMARY KEY |
+| staffname | varchar(50) | |
+| department | varchar(100) | | 
+| salary | int | |
+
+##### **ii.** Now create a view with name 'st' having fields staffid, staffname, department.
+##### **iii.** Now insert some records in 'st' view.
+
+**Ans.**
+
+**i.** Create a table staff with rows (staffid varchar(10) pm, staffname varchar(50), department varchar(100), salary int);
 ```sql
 CREATE TABLE staff 
 (
@@ -529,13 +602,13 @@ CREATE TABLE staff
     salary int 
 );
 ```
-#### now create a view with name 'st' having fields staffid, staffname, department.
+**ii.** Now create a view with name 'st' having fields staffid, staffname, department.
 ```sql
 CREATE VIEW st 
 AS
 SELECT staffid, staffname, department FROM staff;
 ```
-#### now insert some records in 'st' view.
+**iii.** Now insert some records in 'st' view.
 ```sql
 INSERT INTO st VALUES
 ```
