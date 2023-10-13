@@ -29,10 +29,12 @@ CREATE TABLE student
 ```
 
 #### **Q3.** Write a query to insert the following `data` into the `student` table.
-- 1001, Rohit, CS, 12000
-- 1002, Mohit, CS, 12000
-- 1003, Shobhit, IT, 15000
-- 1004, Mudit, IT, 15000
+| rollno | name | branch | fee | 
+| --- | --- | --- | --- |
+| 1001 | Rohit | CS | 12000 |
+| 1002 | Mohit | CS |12000 |
+| 1003 | Shobhit | IT | 15000 |
+| 1004 | Mudit | IT | 15000 |
 
 **Ans.**
 ```sql
@@ -44,11 +46,12 @@ INSERT INTO student VALUES
 ```
 
 #### **Q4.** Write the following queries to `select` the data.
-**i.** Select all records of `student` table with all columns.
-**ii.** Select all records of `student` table with `rollno`, `name`, `branch` columns.
-**iii.** Select all records of `student` table with all columns having `branch` `IT`.
-**iv.** Select the record of `student` table having `rollno` `1003`.
-**v.** Select all records of `student` table with `fee` greater than `12000`.
+
+**i.** Select all records of `student` table with all columns. \
+**ii.** Select all records of `student` table with `rollno`, `name`, `branch` columns. \
+**iii.** Select all records of `student` table with all columns having `branch` `IT`. \
+**iv.** Select the record of `student` table having `rollno` `1003`. \
+**v.** Select all records of `student` table with `fee` greater than `12000`. \
 **vi.** Select the record of `student` table with column `rollno`, `name`, `fee` having `rollno` `1004`.
 
 **Ans.**
@@ -106,11 +109,9 @@ CREATE TABLE customer
 #### **Q2.** Do the following operations and `customer` table:-
 
 **i.** Add a new column with the name `connect_date` with datatype
-`date`.
-**ii.** Drop column `connect_date`.
-
-**iii.** Add primary key on `cust_id` column.
-
+`date`. \
+**ii.** Drop column `connect_date`. \
+**iii.** Add primary key on `cust_id` column. \
 **iv.** Add a new column `connect_date` with datatype `date` after
 `name` column.
 
@@ -129,8 +130,7 @@ CREATE TABLE customer
     ALTER TABLE customer MODIFY cust_id int PRIMARY KEY;
     ```
 
-##### **iv.** Add a new column `connect_date` with datatype `date` after
-`name` column.
+##### **iv.** Add a new column `connect_date` with datatype `date` after `name` column.
     ```sql
     ALTER TABLE customer ADD connect_date date AFTER name; 
     ```
@@ -230,10 +230,10 @@ INSERT INTO account (bs, hra, da) VALUES
 ```
 
 #### **Q3.**
-**i.** Select name from the `person` table, `bs`, `hra` and `da` from `account` table by performing `inner join` operation.
-**ii.** Select name from the `person` table, `bs`, `hra` and `da` from `account` table by performing `left join` operation.
-**iii.** Select name from the `person` table, `bs`, `hra` and `da` from `account` table by performing `right join` operation.
-**iv.** Select name from the `person` table, `bs`, `hra` and `da` from `account` table by performing `full join` operation.
+**i.** Select name from the `person` table, `bs`, `hra` and `da` from `account` table by performing `inner join` operation. \
+**ii.** Select name from the `person` table, `bs`, `hra` and `da` from `account` table by performing `left join` operation. \
+**iii.** Select name from the `person` table, `bs`, `hra` and `da` from `account` table by performing `right join` operation. \
+**iv.** Select name from the `person` table, `bs`, `hra` and `da` from `account` table by performing `full join` operation. 
 
 **Ans.**
 ##### **i.** Select name from `person` table, `bs`, `hra` and `da` from `account` table by performing `inner join` operation.
@@ -289,8 +289,8 @@ SELECT person.name, account.bs, account.hra, account.da FROM person RIGHT JOIN a
 ## Task - 4 (10 october 2023)
 
 #### **Q1.** 
-**i.** Create a database with name ‘practicedb’. 
-**ii.** In practicedb database create a table with name ‘userinfo’ with following structure:-
+**i.** Create a database with name ‘practicedb’.  \
+**ii.** In practicedb database create a table with name ‘userinfo’ with following structure:- 
 
 | Column Name | Data Type | Constraint |
 | --- | --- | --- |
@@ -298,7 +298,8 @@ SELECT person.name, account.bs, account.hra, account.da FROM person RIGHT JOIN a
 | Lastname | VARCHAR(30)| |
 | Contactno | VARCHAR(15) |Primary Key |
 | Emailaddress | VARCHAR(50)| |
-- Now add a new column gender with data type type varchar(6) after Lastname.
+
+**iii.** Now add a new column gender with data type type varchar(6) after Lastname.
 
 **Ans.**
 ##### **i.** Create a database with name ‘practicedb’. 
@@ -316,7 +317,7 @@ CREATE TABLE userinfo
     Emailaddress VARCHAR(50)
 };
 ```
-- Now add a new column gender with data type type varchar(6) after Lastname.
+##### **iii.** Now add a new column gender with data type type varchar(6) after Lastname.
 ```sql
 ALTER TABLE userinfo ADD gender varchar(6) AFTER Lastname;
 ```
@@ -339,14 +340,14 @@ INSERT INTO userinfo VALUES
 ```
 
 #### **Q3.** Now perform following operations on userinfo table:-
-**i.** Select all records from `userinfo` table.
-**ii.** Select `Firstname`, `Lastname`, `Emailaddress` columns from `userinfo` table.
-**iii.** Select record with `contactno` `9453318798`.
-**iv.** Select all records with `gender` `Male`.
-**v.** Count records with `gender` `Female`.
-**vi.** Update `emailaddress` with value `brijesh.225409@gmail.com` for `contactno` `9453318798`.
-**vii.** Delete record with `contactno` `7753001621`.
-**viii.** Truncate table `userinfo`.
+**i.** Select all records from `userinfo` table. \
+**ii.** Select `Firstname`, `Lastname`, `Emailaddress` columns from `userinfo` table. \
+**iii.** Select record with `contactno` `9453318798`. \
+**iv.** Select all records with `gender` `Male`. \
+**v.** Count records with `gender` `Female`. \
+**vi.** Update `emailaddress` with value `brijesh.225409@gmail.com` for `contactno` `9453318798`. \
+**vii.** Delete record with `contactno` `7753001621`. \
+**viii.** Truncate table `userinfo`. \
 **ix.** Drop table `userinfo`.
 
 **Ans.** 
@@ -434,7 +435,7 @@ CREATE TABLE city
 ## Task - 5 (12 october 2023)
 
 #### **Q1** 
-**i.** Create a new database in MySql with name `testdb`.
+**i.** Create a new database in MySql with name `testdb`. \
 **ii.** In `testdb` database create a table 'bookstore` with following structure:-
 
 **Ans.**
@@ -489,11 +490,11 @@ INSERT INTO bookstore VALUES
 ('TMBU7', '12345688', 'B.Tech.', 'IT', 'Database', 'RDBMS Using MySQL', 'Brijesh Mishra');
 ```
 #### **Q3.** Perform the followiong operations on bookstore table:-
-**i.** Select bookid, isbnno, program, bookname, authorname from bookstore table with all rows.
-**ii.** Select all books of "CS" branch
-**iii.** Count no. of books with name "Let Us C"
-**iv.** Update authorname with "Vipin C. Desai" for bookid "TMBU7"
-**v.** Delete record of book with bookid TMBU7.
+**i.** Select bookid, isbnno, program, bookname, authorname from bookstore table with all rows. \
+**ii.** Select all books of "CS" branch. \
+**iii.** Count no. of books with name "Let Us C". \
+**iv.** Update authorname with "Vipin C. Desai" for bookid "TMBU7". \
+**v.** Delete record of book with bookid TMBU7. 
 
 **Ans.**
 
@@ -558,7 +559,7 @@ INSERT INTO issuebook VALUES
 (4, 'TMBU5', 1003, 'Nisha Kumari', 'Effective Java', 'Joshua Bloch');
 ```
 #### **Q6.**
-**i.** select bookid, isbno, rollno, studentname, bookname, authorname from bookstore and issuebook tables using inner join operation.
+**i.** select bookid, isbno, rollno, studentname, bookname, authorname from bookstore and issuebook tables using inner join operation. \
 **ii.** select bookid, isbno, rollno, studentname, bookname, authorname from bookstore and issuebook tables using full outer join operation.
 
 **Ans.**
@@ -592,7 +593,7 @@ ON bookstore.bookid=issuebook.bookid;
 | department | varchar(100) | | 
 | salary | int | |
 
-**ii.** Now create a view with name 'st' having fields staffid, staffname, department.
+**ii.** Now create a view with name 'st' having fields staffid, staffname, department. \
 **iii.** Now insert some records in 'st' view.
 
 **Ans.**
