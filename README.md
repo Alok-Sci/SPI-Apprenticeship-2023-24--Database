@@ -456,10 +456,11 @@ UPDATE student SET branch='ME' WHERE rollno=1002;
 
 `ALTER` command is used to modify structure of database objects like table.
 
-`ALTER` command can be categorized into 3 types:
-1. ADD
-2. DELETE
-3. MODIFY
+`ALTER` command can be categorized into 4 types:
+1. ADD (add a new column)
+2. DELETE (delete a column)
+3. MODIFY (modify the structure of a column)
+4. CHANGE (rename a column)
 
 ***Syntax:*** 
 - to add a column in a table
@@ -484,7 +485,7 @@ UPDATE student SET branch='ME' WHERE rollno=1002;
     ```
 - to rename the column of a table
     ```sql
-    ALTER TABLE <table_name> RENAME <column_name> TO <new_column_name>;
+    ALTER TABLE <table_name> CHANGE <column_name> <new_column_name> <data_type><constraint>;
     ```
 ***Breakdown:***
 - `ALTER TABLE`: Keyword indicating modification of an existing table.
